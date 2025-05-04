@@ -1,0 +1,172 @@
+/* userForm.css */
+.main {
+    width: 100%;
+    
+    /* border: 2px solid red; */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    /* justify-content:flex-start; */
+    gap: 1rem;
+    margin-bottom: 20px;
+}
+
+.navbar{
+    border-radius: 10px;
+}
+.navbar-brand img {
+    max-height: 100px;
+  }
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.contact-details {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 20px;
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* flex: 1; */
+    width: 50%;
+}
+
+.form-right {
+    width: 180px;
+    text-align: center;
+}
+.form-left .mb-2,
+.form-right .mb-2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.photo-preview {
+    width: 200px;
+    position: relative;
+    display: inline-block;
+}
+.photo-thumbnail{
+    width: 200px;
+
+}
+.photo-img {
+    width: 160px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.remove-photo-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+.personalDetail {
+    width: fit-content;
+    text-decoration: underline;
+    text-underline-position: under;
+    background-color: yellow;
+    margin-bottom: 2rem;
+  }
+  .terms{
+    span{
+        text-align: center;
+        text-decoration: underline;
+        text-underline-position: under;
+        background-color: yellow;
+        margin-bottom: 2rem;
+
+    }
+    width: 100%;
+  }
+  ol {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+  
+  ol li {
+    text-align: left;
+    text-indent: -10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  
+  /* label{
+    display: inline-block;
+    width: 20%;
+  } */
+  .label-12 {
+    width: 12rem;
+  }
+  .label-25 {
+    width:25rem;
+  }
+  .label-20 {
+    width:20rem;
+  }
+  .label-30 {
+    width:30rem;
+  }
