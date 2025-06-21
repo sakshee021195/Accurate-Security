@@ -75,7 +75,9 @@ const UserForm = () => {
                 photo: photo // include photo only if necessary
             };
     
-            const response = await axios.post('http://localhost:5000/api/form/submit', payload);
+            // const response = await axios.post('http://localhost:5000/api/form/submit', payload);
+            const response = await axios.post('https://accurate-backend.onrender.com/api/form/submit', payload);
+
             console.log('Server Response:', response.data);
     
             setMessage('Form submitted successfully!');
