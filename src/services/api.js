@@ -2,7 +2,8 @@ import axios from 'axios';
 
 // Create an axios instance with base URL
 const api = axios.create({
-  baseURL: 'https://accurate-backend.onrender.com/api',  // ✅ LIVE backend URL
+  baseURL: 'https://accurate-security-backend.onrender.com/api',
+
 
   // baseURL: 'http://localhost:5000/api',
   headers: {
