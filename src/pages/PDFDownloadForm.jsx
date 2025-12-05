@@ -57,13 +57,13 @@ const PDFDownloadForm = ({ formData, photo, logo }) => {
             // Add passport photo if available
             if (photo) {
                 try {
-                    const photoX = pageWidth - 50;
+                    const photoX = pageWidth - 40;
                     const photoY = 55;
                     
                     // Add photo label first
                     doc.setFontSize(8);
                     doc.setFont('helvetica', 'bold');
-                    doc.text("Passport Photo", photoX + 17.5, photoY, { align: "center" });
+                    doc.text("Passport Photo", photoX + 12.5, photoY, { align: "center" });
                     
                     // Add photo below label
                     doc.addImage(photo, 'JPEG', photoX, photoY + 3, 25, 25);
