@@ -8,6 +8,7 @@ import './userForm.css';  // Import the external CSS file
 import jsPDF from 'jspdf';
 import 'jspdf-autotable'; // If you're using tables (optional)
 import axios from 'axios';
+import PDFDownloadForm from './PDFDownloadForm';
 
 
 const initialValues = {
@@ -75,7 +76,6 @@ const UserForm = () => {
                 photo: photo // include photo only if necessary
             };
     
-            // const response = await axios.post('http://localhost:5000/api/form/submit', payload);
             const response = await axios.post('https://accurate-security-backend.onrender.com/api/form/submit', payload);
 
             console.log('Server Response:', response.data);
@@ -93,28 +93,28 @@ const UserForm = () => {
     };
     
 
-    const handleDownloadPDF = (values) => {
-        const doc = new jsPDF();
-        doc.setFontSize(12);
-        doc.text('ENROLMENT FORM - ACCURATE SECURITY', 20, 10);
-        let y = 20;
+    // const handleDownloadPDF = (values) => {
+    //     const doc = new jsPDF();
+    //     doc.setFontSize(12);
+    //     doc.text('ENROLMENT FORM - ACCURATE SECURITY', 20, 10);
+    //     let y = 20;
 
-        Object.entries(values).forEach(([key, val]) => {
-            doc.text(`${key}: ${val}`, 20, y += 10);
-            if (y > 280) {
-                doc.addPage();
-                y = 10;
-            }
-        });
+    //     Object.entries(values).forEach(([key, val]) => {
+    //         doc.text(`${key}: ${val}`, 20, y += 10);
+    //         if (y > 280) {
+    //             doc.addPage();
+    //             y = 10;
+    //         }
+    //     });
 
-        if (photo) {
-            doc.addPage();
-            doc.text('Passport Photo:', 20, 20);
-            doc.addImage(photo, 'JPEG', 20, 30, 60, 80);
-        }
+    //     if (photo) {
+    //         doc.addPage();
+    //         doc.text('Passport Photo:', 20, 20);
+    //         doc.addImage(photo, 'JPEG', 20, 30, 60, 80);
+    //     }
 
-        doc.save('enrolment-form.pdf');
-    };
+    //     doc.save('enrolment-form.pdf');
+    // };
 
     return (
         <div className="main container-fluid px-5">
@@ -566,13 +566,18 @@ const UserForm = () => {
                                 >
                                     {isSubmitting ? 'Submitting...' : 'Submit Form'}
                                 </button>
-                                <button
+                                {/* <button
                                     type="button"
                                     className="btn btn-primary"
                                     onClick={() => handleDownloadPDF(values)}
                                 >
                                     Download PDF
-                                </button>
+                                </button> */}
+                                    <PDFDownloadForm 
+        formData={values} 
+        photo={photo} 
+        logo={logo} 
+    />
                             </div>
                         </div>
                     </Form>

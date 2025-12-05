@@ -1,0 +1,334 @@
+/* PDFDownloadForm.css */
+
+/* Main container styling matching UserForm */
+.pdf-download-wrapper {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Button container - matches form-actions from UserForm */
+.pdf-download-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Primary button styling - matches UserForm btn and btn-primary */
+.pdf-download-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+}
+
+/* Button primary color - matching UserForm */
+.pdf-download-btn.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.pdf-download-btn.btn-primary:hover:not(:disabled) {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.pdf-download-btn.btn-primary:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Button success color - matching UserForm */
+.pdf-download-btn.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.pdf-download-btn.btn-success:hover:not(:disabled) {
+    background-color: #218838;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+/* Disabled state */
+.pdf-download-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    background-color: #6c757d;
+}
+
+.pdf-download-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Spinner styles - Bootstrap compatible */
+.spinner-border {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: text-bottom;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+}
+
+.spinner-border-sm {
+    width: 0.875rem;
+    height: 0.875rem;
+    border-width: 2px;
+}
+
+@keyframes spinner-border {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Utility classes matching Bootstrap */
+.me-2 {
+    margin-right: 0.5rem;
+}
+
+.ms-2 {
+    margin-left: 0.5rem;
+}
+
+/* PDF generation status message */
+.pdf-status-message {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #e7f3ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 4px;
+    color: #004085;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.pdf-status-message.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.pdf-status-message.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Icon styles */
+.pdf-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}
+
+/* Hover effect for button text */
+.pdf-download-btn span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Loading overlay (optional) - matches UserForm alert styles */
+.pdf-generating-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.pdf-generating-message {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 400px;
+}
+
+.pdf-generating-message .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 4px;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.pdf-generating-message p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Alert styling matching UserForm */
+.pdf-alert {
+    padding: 12px 20px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.pdf-alert.alert-info {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+}
+
+.pdf-alert.alert-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.pdf-alert.alert-danger {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Responsive design matching UserForm breakpoints */
+@media (max-width: 768px) {
+    .pdf-download-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .pdf-download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pdf-status-message {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .pdf-download-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        min-width: 120px;
+    }
+
+    .pdf-generating-message {
+        padding: 20px 30px;
+        max-width: 90%;
+    }
+}
+
+/* Additional button variants if needed */
+.pdf-download-btn.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.pdf-download-btn.btn-secondary:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+.pdf-download-btn.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.pdf-download-btn.btn-danger:hover:not(:disabled) {
+    background-color: #c82333;
+}
+
+/* Button group styling if multiple PDF options */
+.pdf-button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* PDF preview modal (if needed) */
+.pdf-preview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.pdf-preview-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-preview-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Tooltip for button (optional) */
+.pdf-tooltip {
+    position: relative;
+}
+
+.pdf-tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    margin-bottom: 5px;
+}
+
+.pdf-tooltip:hover::after {
+    opacity: 1;
+}
